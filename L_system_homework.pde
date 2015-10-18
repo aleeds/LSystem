@@ -91,13 +91,13 @@ void DrawCrazyTree(int num) {
   stroke(0);
   randomSeed(seed);
   ArrayList<LRule> rules = new ArrayList<LRule>();
-  String[] pos = {"FF-F--F-F","F-F--F-FF","FF+F++F+F","F+F++F+FF","FF--FF++FF"};
+  String[] pos = {"FF-F--F-F","F-F--F-FF","FF+F++F+F","F+F++F+FF","FF--FF++FF","F"};
   rules.add(new StochLRule("F", pos));
   String[] pos_1 = {"-","+","+"};
   rules.add(new StochLRule("+",pos_1));
   pos_1[1] = "-";
   rules.add(new StochLRule("-",pos_1));
-  String next = "F-F+F-F+F-F+F-F+F-F+F-F+F-F+F-F+F-F";
+  String next = "FFF-FFF+FFF";
   for (int i = 0;i < num;++i) next = NextL(next,rules);
   println(next);
   DragonExtend dre = new DragonExtend();
